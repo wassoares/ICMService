@@ -1,0 +1,2 @@
+# APICMService
+Este repositório contém uma API de serviços REST, utilizando Spring Framework, para o cálculo das novas regras do ICMS, na ocorrência de transações interestaduais, tais como: substituição tributária, diferencial de alíquota e antecipação do imposto.
