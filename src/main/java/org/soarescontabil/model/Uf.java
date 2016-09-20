@@ -2,10 +2,13 @@ package org.soarescontabil.model;
 
 import org.soarescontabil.model.aliquot.AliquotaExterior;
 import org.soarescontabil.model.aliquot.Aliquota17Padrao12;
+import org.soarescontabil.model.aliquot.Aliquota17Padrao7;
 import org.soarescontabil.model.aliquot.Aliquota18Padrao12;
+import org.soarescontabil.model.aliquot.Aliquota18Padrao7;
+import org.soarescontabil.model.aliquot.Aliquota19Padrao7;
 
 public enum Uf {
-
+	
 	AC {
 		@Override
 		public Aliquota obterAliquota() {
@@ -83,11 +86,10 @@ public enum Uf {
 		}
 	},
 	
-	//MG...
 	MG {
 		@Override
 		public Aliquota obterAliquota() {
-			return null;
+			return new Aliquota18Padrao7();
 		}
 	},
 	
@@ -132,20 +134,18 @@ public enum Uf {
 			return new Aliquota17Padrao12();
 		}
 	},
-	
-	// PR...
+
 	PR {
 		@Override
 		public Aliquota obterAliquota() {
-			return null;
+			return new Aliquota18Padrao7();
 		}
 	},
-	
-	// RJ...
+
 	RJ {
 		@Override
 		public Aliquota obterAliquota() {
-			return null;
+			return new Aliquota19Padrao7();
 		}
 	},
 	
@@ -169,20 +169,18 @@ public enum Uf {
 			return new Aliquota17Padrao12();
 		}
 	},
-	
-	// RS...
+
 	RS {
 		@Override
 		public Aliquota obterAliquota() {
-			return null;
+			return new Aliquota18Padrao7();
 		}
 	},
-	
-	// SC...
+
 	SC {
 		@Override
 		public Aliquota obterAliquota() {
-			return null;
+			return new Aliquota17Padrao7();
 		}
 	},
 	
@@ -192,12 +190,11 @@ public enum Uf {
 			return new Aliquota18Padrao12();
 		}
 	},
-	
-	// SP...
+
 	SP {
 		@Override
 		public Aliquota obterAliquota() {
-			return null;
+			return new Aliquota18Padrao7();
 		}
 	},
 	
