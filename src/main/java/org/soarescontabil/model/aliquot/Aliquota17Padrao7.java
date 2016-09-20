@@ -4,23 +4,6 @@ import org.soarescontabil.model.Aliquota;
 import org.soarescontabil.model.Uf;
 
 public class Aliquota17Padrao7 implements Aliquota {
-
-	@Override
-	public double getValorOrigem() {
-		return 17;
-	}
-
-	@Override
-	public double getValorDestino(Uf uf) {
-		if (uf.equals(Uf.EX)) {
-			return 4;
-		} else if (uf.equals(Uf.MG) || uf.equals(Uf.PR) || uf.equals(Uf.RS) || uf.equals(Uf.RJ) || uf.equals(Uf.SC) || uf.equals(Uf.SP)) {
-			return 12;
-		} else {
-			return 7;
-		}
-
-	}
 	
 	@Override
 	public double getPorcentagem(Uf origem, Uf destino) {

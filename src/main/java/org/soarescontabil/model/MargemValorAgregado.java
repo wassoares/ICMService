@@ -1,12 +1,16 @@
 package org.soarescontabil.model;
 
-public class MargemAgregacao {
+public class MargemValorAgregado {
 
-	private int id;
+	private Integer id;
 	private String atividade;
 	private Double aliquota;
 
-	public int getId() {
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+	public Integer getId() {
 		return id;
 	}
 
