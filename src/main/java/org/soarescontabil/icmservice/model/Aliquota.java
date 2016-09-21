@@ -1,4 +1,4 @@
-package org.soarescontabil.model;
+package org.soarescontabil.icmservice.model;
 
 public interface Aliquota {
 	

@@ -1,7 +1,7 @@
-package org.soarescontabil.model.aliquot;
+package org.soarescontabil.icmservice.model.aliquot;
 
-import org.soarescontabil.model.Aliquota;
-import org.soarescontabil.model.Uf;
+import org.soarescontabil.icmservice.model.Aliquota;
+import org.soarescontabil.icmservice.model.Uf;
 
 public class Aliquota18Padrao12 implements Aliquota {
 

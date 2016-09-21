@@ -1,7 +1,14 @@
-package org.soarescontabil.model;
+package org.soarescontabil.icmservice.model;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+@Entity
 public class MargemValorAgregado {
 
+	@Id
+	@GeneratedValue
 	private Integer id;
 	private String atividade;
 	private Double aliquota;

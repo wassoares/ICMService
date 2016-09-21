@@ -1,4 +1,4 @@
-package org.soarescontabil;
+package org.soarescontabil.icmservice;
 
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.support.SpringBootServletInitializer;

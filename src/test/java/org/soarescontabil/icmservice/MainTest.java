@@ -1,7 +1,7 @@
-package org.soarescontabil;
+package org.soarescontabil.icmservice;
 
-import org.soarescontabil.model.SelecaoDeAliquota;
-import org.soarescontabil.model.Uf;
+import org.soarescontabil.icmservice.model.SelecaoDeAliquota;
+import org.soarescontabil.icmservice.model.Uf;
 
 public class MainTest {
 

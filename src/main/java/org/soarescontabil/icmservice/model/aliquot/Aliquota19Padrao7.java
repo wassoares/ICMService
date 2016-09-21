@@ -1,14 +1,14 @@
-package org.soarescontabil.model.aliquot;
+package org.soarescontabil.icmservice.model.aliquot;
 
-import org.soarescontabil.model.Aliquota;
-import org.soarescontabil.model.Uf;
+import org.soarescontabil.icmservice.model.Aliquota;
+import org.soarescontabil.icmservice.model.Uf;
 
-public class Aliquota18Padrao7 implements Aliquota {
-	
+public class Aliquota19Padrao7 implements Aliquota {
+
 	@Override
 	public double getPorcentagem(Uf origem, Uf destino) {
 		if (origem.equals(destino)) {
-			return 18;
+			return 19;
 		} else if (destino.equals(Uf.EX)) {
 			return 4;
 		} else if (destino.equals(Uf.MG) || destino.equals(Uf.PR) || destino.equals(Uf.RS) || destino.equals(Uf.RJ) || destino.equals(Uf.SC) || destino.equals(Uf.SP)) {
