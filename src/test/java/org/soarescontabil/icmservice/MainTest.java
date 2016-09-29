@@ -1,47 +1,71 @@
 package org.soarescontabil.icmservice;
 
 import org.soarescontabil.icmservice.model.CustoMercadoria;
-import org.soarescontabil.icmservice.model.DiferencialDeAliquota;
-import org.soarescontabil.icmservice.model.SeletorDeAliquota;
+import org.soarescontabil.icmservice.model.DiferencialSaidas;
+import org.soarescontabil.icmservice.model.AliquotaInterEstadual;
+import org.soarescontabil.icmservice.model.AntecipacaoEntradas;
 import org.soarescontabil.icmservice.model.SubstituicaoTributaria;
-import org.soarescontabil.icmservice.model.Uf;
 
 public class MainTest {
 
+	private static CustoMercadoria mercadoria = new CustoMercadoria();
+	
 	public static void main(String[] args) {
-		//realizar vários testes para cobrir as opções do mapa de aliquotas internas do ICMS... 
-		System.out.println("Aliquota: " + SeletorDeAliquota.selecionar(Uf.valueOf("PB"), Uf.valueOf("RN")));
-		
-		//teste substituição tributária...
-		CustoMercadoria cmst = new CustoMercadoria();
-		cmst.setValor(190);
-		cmst.setUfOrigem("PB");
-		cmst.setUfDestino("RN");
-		cmst.setCredito(0);
-		
+		// realizar testes para cobrir as opções de aliquotas...
+		System.out.println("Aliquota Interestadual PB->RN");
+		System.out.println("Aliquota: " + AliquotaInterEstadual.selecionar("PB", "RN"));
+
+		// teste substituição tributária...
+		mercadoria.setValor(190);
+		mercadoria.setUfOrigem("PB");
+		mercadoria.setUfDestino("RN");
+		mercadoria.setCredito(0);
+
 		SubstituicaoTributaria st = new SubstituicaoTributaria();
-		st.setCustoMercadoria(cmst);
+		st.setCustoMercadoria(mercadoria);
 		st.setAgregacao(71.78);
 		st.calcular();
-		
+
+		System.out.println("Substituição Tributária");
+		System.out.println("Imposto Destacado: " + st.getCreditoDestacado());
 		System.out.println("Base de Cálculo: " + st.getBaseDeCalculo());
-		System.out.println("Valor do Imposto: " + st.getValor());
+		System.out.println("Valor Imposto: " + st.getValor());
+
+		// teste antentecipação entrada...
+		mercadoria.setValor(1000);
+		mercadoria.setUfOrigem("BA");
+		mercadoria.setUfDestino("SP");
+		mercadoria.setCredito(0);
+
+		AntecipacaoEntradas ae = new AntecipacaoEntradas();
+		ae.setCustoMercadoria(mercadoria);
+		ae.calcular();
+
+		System.out.println("Antecipação Entradas");
+		System.out.println("Imposto Destacado: " + ae.getCreditoDestacado());
+		System.out.println("Valor Imposto: " + ae.getValor());
 		
-		//teste diferencial de aliquota...
-		CustoMercadoria cm = new CustoMercadoria();
-		cm.setValor(1000);
-		cm.setUfOrigem("BA");
-		cm.setUfDestino("SP");
-		cm.setCredito(0);
-		
-		DiferencialDeAliquota df = new DiferencialDeAliquota();
-		df.setCustoMercadoria(cm);
-		df.calcular();
-		
-		System.out.println("Imposto Destacado: " + df.getCredito());
-		System.out.println("Aliquota Interna: " + df.getAliquotaInterna());
-		System.out.println("Aliquota Externa: " + df.getAliquotaExterna());
-		System.out.println("Valor do Imposto: " + df.getValor());
+		// teste diferencial saídas...
+		mercadoria.setValor(2000);
+		mercadoria.setUfOrigem("MG");
+		mercadoria.setUfDestino("SP");
+		mercadoria.setCredito(0);
+
+		DiferencialSaidas ds = new DiferencialSaidas();
+		ds.setCustoMercadoria(mercadoria);
+		ds.setDataCalculo("29/09/2016");
+		ds.setRotinaFuncep("ESPECIFICO");		
+		ds.calcular();
+
+		System.out.println("Diferencial Saídas");
+		System.out.println("Aliquota Externa: " + ds.getAliquotaExterna());
+		System.out.println("Imposto Destacado: " + ds.getCreditoDestacado());
+		System.out.println("Aliquota Interna: " + ds.getAliquotaInterna());		
+		System.out.println("Total Imposto: " + ds.getValor());
+		System.out.println("Aliquota Funcep: " + ds.getAliquotaFuncep());
+		System.out.println("Valor Funcep: " + ds.getValorFuncep());
+		System.out.println("Partilha Uf Origem: " + ds.getPartilhaOrigem());
+		System.out.println("Partilha Uf Destino: " + ds.getPartilhaDestino());
 	}
 
 }

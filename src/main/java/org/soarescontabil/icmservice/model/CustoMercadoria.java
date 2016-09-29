@@ -7,6 +7,16 @@ public class CustoMercadoria {
 	private String ufDestino;
 	private double credito;
 
+	public CustoMercadoria() {
+	}
+
+	public CustoMercadoria(double valor, String ufOrigem, String ufDestino, double credito) {
+		setValor(valor);
+		setUfOrigem(ufOrigem);
+		setUfDestino(ufDestino);
+		setCredito(credito);
+	}
+
 	public double getValor() {
 		return valor;
 	}
