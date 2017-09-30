@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8"></meta>
+</head>
+<body>
+
+	<div class="modal-dialog">
+		<div class="modal-content container col-sm-12">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+				<h4 class="modal-title">Cadastro de Usuários</h4>
+			</div>
+			<div class="modal-body">
+				<ul class="nav nav-tabs" ng-init="activeTab = 'registros'">
+					<li ng-class="{ active: activeTab === 'registros' }">
+						<a ng-click="activeTab = 'registros'" href="#">Registros</a>
+					</li>
+					<li ng-class="{ active: activeTab === 'cadastro' }">
+						<a ng-click="activeTab = 'cadastro'" href="#">Cadastro</a>
+					</li>
+				</ul>
+				<div class="tab-content">
+					<div class="tab-pane" ng-class="{ active: activeTab === 'registros' }">
+						<table class="table table-hover">
+							<thead class="thead-default">
+								<tr>
+									<th>Id</th>
+									<th>Usuário</th>
+									<th>Senha</th>
+									<th align=center>Excluir</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr ng-repeat="usuario in usuarios">
+									<th scope="row"></th>
+									<td>{{usuario.id}}</td>
+									<td>{{usuario.login}}</td>
+									<td>{{usuario.senha}}</td>
+									<td align=center>
+										<a ng-click="excluir(usuario)">
+											<span class="glyphicon glyphicon-remove"></span>
+										</a>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						<div class="alert alert-info" ng-show="mostrar">
+							<strong>Cadastro de Usuários</strong> não possui registros no momento.
+						</div>
+						<msg-alerta destaque="título teste" texto="corpo do texto aqui" opcao="mostrar"></msg-alerta>
+					</div>
+					<div class="tab-pane" ng-class="{ active: activeTab === 'cadastro' }">
+						<form name="frmUsuario" novalidate >
+							<div class="modal-body">
+								<div class="row">
+									<div class="form-group col-sm-12">
+										<label for="login">Login</label>							
+										<div class="input-group">
+											<div class="input-group-addon">
+												<span class="glyphicon glyphicon-user"></span>
+											</div>								
+											<input type="text" id="login" class="form-control" ng-model="usuario.login" placeholder="Login do Usuário" ng-minlength="3" required ></input>
+										</div>
+									</div>
+									<div class="form-group col-sm-12">
+										<label for="senha">Senha</label>
+										<div class="input-group">
+											<div class="input-group-addon">
+												<span class="glyphicon glyphicon-option-horizontal"></span>
+											</div>								
+											<input type="password" id="senha" class="form-control" ng-model="usuario.senha" placeholder="Senha do Usuário" ng-minlength="3" required ></input>
+										</div>
+									</div>
+								</div>				
+							</div>
+							<div class="modal-footer">
+								<button type="reset" class="btn btn-default"  ng-click="limpar()">Limpar</button>
+								<button type="submit" class="btn btn-primary" ng-disabled="!frmUsuario.$valid" ng-click="salvar()">Salvar</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>	
+		</div>
+	</div>
+</body>
+</html>

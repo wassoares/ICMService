@@ -11,25 +11,25 @@ import org.springframework.stereotype.Service;
 public class MargemValorAgregadoService {
 
 	@Autowired
-	private MargemValorAgregadoRepository mvaRepository;
+	private MargemValorAgregadoRepository margemRepository;
 
-	public MargemValorAgregado salvar(MargemValorAgregado mva) {
-		return mvaRepository.save(mva);		
+	public MargemValorAgregado salvar(MargemValorAgregado margem) {
+		return margemRepository.save(margem);		
 	}
 
 	public Collection<MargemValorAgregado> buscarTodos() {
-		return mvaRepository.findAll();
+		return margemRepository.findAll();
 	}
 	
 	public MargemValorAgregado buscarPorId(Integer id) {
-		return mvaRepository.findOne(id);
+		return margemRepository.findOne(id);
 	}
 	
-	public void excluir(MargemValorAgregado mva) {
-		mvaRepository.delete(mva);
+	public void excluir(MargemValorAgregado margem) {
+		margemRepository.delete(margem);
 	}
 	
-	public MargemValorAgregado alterar(MargemValorAgregado mva) {
-		return mvaRepository.save(mva);
+	public MargemValorAgregado alterar(MargemValorAgregado margem) {
+		return margemRepository.save(margem);
 	}
 }

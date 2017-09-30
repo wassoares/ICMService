@@ -15,39 +15,46 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
+@RequestMapping//("/admin")
 public class MargemValorAgregadoController {
 
 	@Autowired
-	MargemValorAgregadoService mvaService;
+	MargemValorAgregadoService margemService;
 
-	@RequestMapping(method = RequestMethod.POST, value = "/mva", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<MargemValorAgregado> save(@RequestBody MargemValorAgregado mva) {
-		MargemValorAgregado mvaSalvo = mvaService.salvar(mva);
-		return new ResponseEntity<>(mvaSalvo, HttpStatus.CREATED);
+	@RequestMapping(method = RequestMethod.POST, value = "/margens", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<MargemValorAgregado> save(@RequestBody MargemValorAgregado margem) {
+		MargemValorAgregado margemSalva = margemService.salvar(margem);
+		return new ResponseEntity<>(margemSalva, HttpStatus.CREATED);
 	}
 
-	@RequestMapping(method = RequestMethod.GET, value = "/mva", produces = MediaType.APPLICATION_JSON_VALUE)
+	@RequestMapping(method = RequestMethod.GET, value = "/margens", produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<Collection<MargemValorAgregado>> findAll() {
-		Collection<MargemValorAgregado> mvaEncontrados = mvaService.buscarTodos();
-		return new ResponseEntity<>(mvaEncontrados, HttpStatus.OK);
+		Collection<MargemValorAgregado> margensEncontradas = margemService.buscarTodos();
+		return new ResponseEntity<>(margensEncontradas, HttpStatus.OK);
 	}
 	
-	@RequestMapping(method = RequestMethod.DELETE, value = "/mva/{id}")
+	@RequestMapping(method = RequestMethod.GET, value = "/margens/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<MargemValorAgregado> findById(@PathVariable Integer id) {
+		MargemValorAgregado margemEncontrada = margemService.buscarPorId(id);
+		return new ResponseEntity<>(margemEncontrada, HttpStatus.OK);
+	}
+	
+	@RequestMapping(method = RequestMethod.DELETE, value = "/margens/{id}")
 	public ResponseEntity<MargemValorAgregado> remove(@PathVariable Integer id) {
-		MargemValorAgregado mvaEncontrado = mvaService.buscarPorId(id);		
-		if (mvaEncontrado == null) {
+		MargemValorAgregado margemEncontrada = margemService.buscarPorId(id);		
+		if (margemEncontrada == null) {
 			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 		}
-		mvaService.excluir(mvaEncontrado);
+		margemService.excluir(margemEncontrada);
 		return new ResponseEntity<>(HttpStatus.OK);
 	}
 
-	@RequestMapping(method = RequestMethod.PUT, value = "/mva", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<MargemValorAgregado> update(@RequestBody MargemValorAgregado mva) {
-		if (mvaService.buscarPorId(mva.getId()) == null) {
+	@RequestMapping(method = RequestMethod.PUT, value = "/margens", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<MargemValorAgregado> update(@RequestBody MargemValorAgregado margem) {
+		if (margemService.buscarPorId(margem.getId()) == null) {
 			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 		}
-		MargemValorAgregado mvaAlterado = mvaService.alterar(mva);
-		return new ResponseEntity<>(mvaAlterado, HttpStatus.OK);
+		MargemValorAgregado margemAlterada = margemService.alterar(margem);
+		return new ResponseEntity<>(margemAlterada, HttpStatus.OK);
 	}
 }

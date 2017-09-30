@@ -1,0 +1,18 @@
+body {
+	min-height: 100vh;
+	background-image: url('https://unsplash.it/g/1920/1080?image=0');
+	background-size: cover;
+}
+
+#frame {
+	margin-top: 20vh;
+	transform: translateY(-10%);
+}
+
+.alignment {
+	text-align: right;	
+}
+
+input.ng-touched.ng-invalid, select.ng-touched.ng-invalid {
+	border-color: #ff8080;
+}

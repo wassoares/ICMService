@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8"></meta>
+</head>
+<body>
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+				<h4 class="modal-title">ICMS Antecipação</h4>
+			</div>
+			<div class="modal-body">
+				<form name="frmAntecipacao" novalidate >				
+					<div class="row">
+						<div class="form-group col-sm-6">
+							<label for="custo">Custo da Mercadoria</label>							
+							<div class="input-group">
+								<span class="input-group-addon">R$</span>
+								<input type="number" id="custo" class="form-control" ng-model="antecipacao.custoMercadoria.valor" pattern="\d*([^,]\.\d{1,2})?" required ></input>
+							</div>
+						</div>
+						<div class="form-group col-sm-6">
+							<label for="credito">Crédito de ICMS</label>
+							<div class="input-group">
+								<span class="input-group-addon">R$</span> 
+								<input type="number" id="credito" class="form-control" ng-model="antecipacao.custoMercadoria.credito" pattern="\d*([^,]\.\d{1,2})?" required ></input>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="form-group col-sm-3 col-xs-6">
+							<label for="origem">Uf de Origem</label> 
+							<select id="origem" class="form-control" ng-model="antecipacao.custoMercadoria.ufOrigem" ng-minlength="2" required >
+								<option ng-repeat="uf in listaEstados">{{uf}}</option>
+							</select>
+						</div>
+						<div class="form-group col-sm-3 col-xs-6">
+							<label for="aliquota-interna">Aliquota Interna</label>
+							<input type="text" id="aliquota-interna" readonly="readonly" class="alignment form-control" value="{{antecipacao.aliquotaInterna | percentage: 0}}"></input>								
+						</div>
+						<div class="form-group col-sm-3 col-xs-6">
+							<label for="destino">Uf de Destino</label> 
+							<select id="destino" class="form-control" ng-model="antecipacao.custoMercadoria.ufDestino" ng-minlength="2" required >
+								<option ng-repeat="uf in listaEstados">{{uf}}</option>
+							</select>
+						</div>
+						<div class="form-group col-sm-3 col-xs-6">
+							<label for="aliquota-externa">Aliq.Interestadual</label>
+							<input type="text" id="aliquota-externa" readonly="readonly" class="alignment form-control" value="{{antecipacao.aliquotaExterna | percentage: 0}}"></input>								
+						</div>
+					</div>					
+					<div class="row">
+						<div class="form-group col-sm-6">
+							<label for="credito-destacado">Crédito Destacado</label>
+							<input type="text" id="credito-destacado" readonly="readonly" class="alignment form-control" value="{{antecipacao.creditoDestacado | currency}}"></input>
+						</div>
+						<div class="form-group col-sm-6">
+							<label for="imposto">Valor do Imposto Gerado</label>
+							<input type="text" id="imposto" readonly="readonly" class="alignment form-control" value="{{antecipacao.valor | currency}}"></input>								
+						</div>						
+					</div>
+				</form>
+			</div>
+			<div class="modal-footer">
+				<button type="reset" class="btn btn-default"  ng-click="limpar()">Limpar</button>
+				<button type="submit" class="btn btn-primary" ng-disabled="!frmAntecipacao.$valid" ng-click="calcular()">Calcular</button>
+			</div>			
+		</div>
+	</div>
+</body>
+</html>

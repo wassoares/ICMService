@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8"></meta>
+
+	<style>
+		fieldset{
+			 display:inline;
+		}
+	</style>
+
+</head>
+
+<body>
+
+	<div>
+		
+		<!--
+		ng-controller="mvaController" 
+		<h1>{{ margem.atividade + ' ' + margem.aliquota }}</h1>
+		-->
+
+		<form novalidate name="frmMargem">
+			<div>
+				<label> Atividade : </label>
+				<input type="text" name="txtAtividade" ng-model="margem.atividade" required ng-minlength="3" ng-maxlength="10"/>
+				<span ng-show="frmMargem.txtAtividade.$error.required && frmMargem.txtAtividade.$dirty">Campo Obrigatório</span>
+			</div>
+			
+			<div>
+				<label> E-mail : </label>
+				<input type="email" name="txtEmail" ng-model="margem.email" required />
+				<span ng-show="frmMargem.txtEmail.$error.required && frmMargem.txtEmail.$dirty">Campo Obrigatório</span>
+				<span ng-show="frmMargem.txtEmail.$error.email">E-mail inválido</span>
+			</div>
+			 
+			<input type="text" ng-model="margem.aliquota" /> 
+			
+			<!--
+			<input type="button" value="Salvar" ng-click="salvar()" />
+			ng-disabled="frmMargem.$invalid"
+			-->
+			
+			<input type="button" value="Cancelar" ng-click="cancelar()" ng-disabled="frmMargem.$invalid" />
+			
+			<div >
+				<fieldset>
+					<legend>Formulário</legend>
+					Valid: {{frmMargem.$valid}}	<br/>
+					Pristine: {{frmMargem.$pristine}}				
+				</fieldset>
+
+				<fieldset>
+					<legend>Atividade</legend>
+					Valid: {{frmMargem.txtAtividade.$valid}} <br/>
+					Invalid: {{frmMargem.txtAtividade.$invalid}} <br/>
+					Pristine: {{frmMargem.txtAtividade.$pristine}} <br/>
+					Dirty: {{frmMargem.txtAtividade.$dirty}} <br/>
+					Touched: {{frmMargem.txtAtividade.$touched}} <br/>
+					Error Required: {{frmMargem.txtAtividade.$error.required}} <br/>
+					Error Min Length: {{frmMargem.txtAtividade.$error.minlength}} <br/>
+					Error Max Length: {{frmMargem.txtAtividade.$error.maxlength}}
+				</fieldset>
+				
+				<fieldset>
+					<legend>Email</legend>
+					Valid: {{frmMargem.txtEmail.$valid}} <br/>
+					Invalid: {{frmMargem.txtEmail.$invalid}} <br/>
+					Pristine: {{frmMargem.txtEmail.$pristine}} <br/>
+					Dirty: {{frmMargem.txtEmail.$dirty}} <br/>
+					Touched: {{frmMargem.txtEmail.$touched}} <br/>
+					Error Required: {{frmMargem.txtEmail.$error.required}}
+				</fieldset>
+				
+			</div>
+
+		</form>
+
+		<div ng-repeat="margem in margens">
+			{{ margem.id +' | '+ margem.atividade +' | '+ margem.aliquota }} 
+			<input type="button" value="Excluir" ng-click="excluir(obj)" />
+			<input type="button" value="Alterar" ng-click="alterar(obj)" />
+			<a href="margens/{{margem.id}}" >Detalhe</a>
+		</div>		
+		
+	</div>
+
+	<!--  
+		ng-controller="ctrl"
+		<div class="form-group col-sm-3 col-xs-6">
+			<label for="atividade">Atividade MVA</label> 
+			<select id="atividade" class="form-control" ng-model="atividade" ng-options="m.atividade for m in list track by m.aliquota">
+				<option ng-repeat="margem in margens" onselect="selecionar(margem)" >{{margem.atividade}}</option>
+				onchange="selecionar(margem)" 
+				ng-options="m.aliquota for m in list track by m.atividade"  
+				value="{{margem.aliquota}}"
+			</select>
+		</div>
+	-->
+
+</body>
+
+</html>

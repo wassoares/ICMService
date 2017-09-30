@@ -1,0 +1,160 @@
+<!-- <div class="modal-dialog form-group alert alert-warning">
+		<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			<span aria-hidden="true">&times;</span>
+		</button>
+		Opção <strong>Cadastro de Usuários</strong> acessível apenas para administradores do site.
+	</div> -->
+	
+					<!-- <table class="table table-hover">
+					<thead class="thead-default">
+						<tr>
+							<th>#</th>
+							<th>Usuário</th>
+							<th>Senha</th>
+							<th></th>
+							<th></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr ng-repeat="usuario in usuarios">
+							<th scope="row">{{usuario.id}}</th>
+							<td>{{usuario.login}}</td>
+							<td>{{usuario.senha}}</td>
+							<td></td>
+							<td></td>
+						</tr>
+					</tbody>
+				</table> -->
+
+				<!-- <ul class="nav nav-tabs">
+					<li><a id="tab1" class="active" data-toggle="tab" ng-click="tab=1" ng-class="{'active' : tab==1}">Aba1</a></li>
+					<li><a data-toggle="tab" ng-click="tab=2" ng-class="{'active' : tab==2}">Aba2</a></li>
+					<li><a data-toggle="tab" ng-click="tab=3" ng-class="{'active' : tab==3}">Aba3</a></li>
+				</ul>
+				<div class="tabs-container">
+					<div class="tab-pane fade in active" ng-show="tab == 1">
+						<h3>Primeira aba</h3>
+						<p>Lorem ipsum...</p>					
+					</div>
+
+					<div class="tab-pane" ng-show="tab == 2">
+						<h3>Segunda aba</h3>
+						<p>Lorem ...</p>
+					</div>
+
+					<div class="tab-pane" ng-show="tab == 3">
+						<h3>Terceira aba</h3>
+						<p>Lorem ...</p>
+						<button ng-click="alterar()">Teste</button>
+					</div>
+				</div> -->
+
+				<!-- <ul class="nav nav-tabs ">
+					<li><a data-toggle="tab" href="#registros">Registros</a></li>
+					<li><a data-toggle="tab" href="#cadastro">Cadastro</a></li>
+				</ul>
+				<div class="tab-content ">
+					<div id="registros" class="tab-pane fade in active table-resposive">
+						<table class="table table-hover">
+					<thead class="thead-default">
+						<tr>
+							<th >Id</th>
+							<th >Usuário</th>
+							<th >Senha</th>
+							<th align=center>Editar</th>
+							<th align=center>Excluir</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr ng-repeat="usuario in usuarios">
+							<th scope="row"></th>
+							<td >{{usuario.id}}</td>
+							<td >{{usuario.login}}</td>
+							<td >{{usuario.senha}}</td>
+							funcionalidade descatável neste contexto testar implementação no cadastro de MVA
+							<td align=center>
+								<a href="/usuarios#cadastro" ng-click="alterar(usuario)"><span class="glyphicon glyphicon-pencil"></span></a>
+							</td>
+							<td align=center>
+								<a ng-click="excluir(usuario)"><span class="glyphicon glyphicon-remove"></span></a>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+					</div>
+					<div id="cadastro" class="tab-pane fade">
+						<form name="frmUsuario" novalidate >
+							<div class="modal-body">
+								<div class="row">
+									<div class="form-group col-sm-12">
+										<label for="login">Login</label>							
+										<div class="input-group">
+											<div class="input-group-addon">
+												<span class="glyphicon glyphicon-user"></span>
+											</div>								
+											<input type="text" id="login" class="form-control" ng-model="usuario.login" placeholder="Login do Usuário" ng-minlength="3" required ></input>
+										</div>
+									</div>
+									<div class="form-group col-sm-12">
+										<label for="senha">Senha</label>
+										<div class="input-group">
+											<div class="input-group-addon">
+												<span class="glyphicon glyphicon-option-horizontal"></span>
+											</div>								
+											<input type="password" id="senha" class="form-control" ng-model="usuario.senha" placeholder="Senha do Usuário" ng-minlength="3" required ></input>
+										</div>
+									</div>
+								</div>				
+							</div>
+							<div class="modal-footer">
+								<button type="reset" class="btn btn-default"  ng-click="limpar()">Limpar</button>
+								<button type="submit" class="btn btn-primary" ng-disabled="!frmUsuario.$valid" ng-click="salvar()">Salvar</button>
+							</div>
+						</form>
+					</div>										
+				 </div>	 -->
+				 
+				 <ul class="nav nav-tabs" ng-init="activeTab = 'details'">
+					<li ng-class="{ active: activeTab === 'details' }">
+						<a ng-click="activeTab = 'details'" href="#">Details</a>
+					</li>
+					<li ng-class="{ active: activeTab === 'options' }">
+						<a ng-click="activeTab = 'options'" href="#">Options</a>
+					</li>
+					<li ng-class="{ active: activeTab === 'other' }">
+						<a ng-click="activeTab = 'other'" href="#">Other</a>
+					</li>
+				</ul>
+				<div class="tab-content">
+					<div class="tab-pane" ng-class="{ active: activeTab === 'details' }">
+						Details tab	content.
+					</div>
+					<div class="tab-pane" ng-class="{ active: activeTab === 'options' }">
+						Options tab content.
+					</div>
+					<div class="tab-pane" ng-class="{ active: activeTab === 'other' }">
+						Other tab content.
+						<button ng-click="activeTab = 'details'">Teste</button>
+					</div>
+				</div>
+
+				<!-- <div class="form-group "> 
+					<div class="input-group ">
+						<div class="input-group-addon">
+							<span class="glyphicon glyphicon-search"></span>
+						</div>						
+						<input type="text" id="busca" class="form-control" placeholder="Pesquisa"></input>								
+					</div>
+					 <div class="input-group">
+						<input type="submit" class="btn btn-default" value="Buscar" ng-click=""></input>
+					</div>
+				</div> -->
+
+				<div class="modal-header">
+					<div class="form-group col-sm-12 col-xs-6">
+						<span class="glyphicon glyphicon-search"></span>
+						<select id="busca" class="form-control" placeholder="Pesquisa">
+							<option ng-repeat=""></option>
+						</select>
+					</div>
+				</div>

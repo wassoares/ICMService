@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8"></meta>
+	<link href="./css/login.css" rel="stylesheet"></link>
+	
+</head>
+<body>
+	<div class="form-login col-xs-10 col-xs-offset-1 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
+		<header>
+			<h1>ICMService</h1>
+			<h2 class="text-center">
+				Entre com <b>login</b> e <b>senha</b>
+			</h2>
+		</header>
+		<form ng-submit="autenticar()">
+
+			<input type="text" ng-model="usuario.login" name="login" class="form-control" placeholder="Login"></input> 
+			<input type="password" ng-model="usuario.senha" name="senha" class="form-control" placeholder="Senha"></input>
+			<footer>
+				<button type="submit" value="Autenticar" class="btn btn-primary pull-right">Autenticar</button>
+			</footer>
+			{{status}}
+		</form>
+	</div>
+	
+	{{token}}
+		
+</body>
+</html>
