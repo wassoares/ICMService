@@ -1,0 +1,25 @@
+.form-login {
+	margin-top: 23vh;
+	padding: 70px 90px;
+	background-color: rgba(0, 0, 0, 0.7);
+	color: #FFF;
+	transform: translateY(-25%);
+}
+
+.form-login h1 {
+	margin: 0 0 10px;
+}
+
+.form-login h2 {
+	margin: 0 0 30px;
+	font-size: 1em;
+}
+
+.form-login input {
+	margin: 0 0 10px;
+}
+
+
+input.ng-touched.ng-invalid {
+	border-color: red;
+}

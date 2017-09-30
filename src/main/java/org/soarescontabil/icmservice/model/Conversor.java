@@ -18,7 +18,7 @@ public class Conversor {
 	public static Date formatar(String data) {
 		Date dataFormatada = null;
 		if (!data.equals("") || !(data == null)) {
-			DateFormat formatador = new SimpleDateFormat("dd/MM/yyyy");
+			DateFormat formatador = new SimpleDateFormat("yyyy-MM-dd");
 			try {
 				dataFormatada = formatador.parse(data);
 			} catch (ParseException e) {
