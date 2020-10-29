@@ -9,9 +9,14 @@ public class Aliquota18Padrao7 implements Aliquota {
 	public double getPorcentagem(Uf origem, Uf destino) {
 		if (origem.equals(destino)) {
 			return 18;
-		} else if (destino.equals(Uf.EX)) {
+		} else if (destino.equals(Uf.IM)) {
 			return 4;
-		} else if (destino.equals(Uf.MG) || destino.equals(Uf.PR) || destino.equals(Uf.RS) || destino.equals(Uf.RJ) || destino.equals(Uf.SC) || destino.equals(Uf.SP)) {
+		} else if (destino.equals(Uf.MG) 
+				|| destino.equals(Uf.PR) 
+				|| destino.equals(Uf.RS) 
+				|| destino.equals(Uf.RJ) 
+				|| destino.equals(Uf.SC) 
+				|| destino.equals(Uf.SP)) {
 			return 12; 
 		}
 		return 7;
