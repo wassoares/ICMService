@@ -105,15 +105,15 @@ public enum Uf {
 		}
 	},
 
-	EX {
+	IM {
 		@Override
 		public Aliquota obterAliquota() {
-			return new AliquotaExterior();
+			return new AliquotaImportacao();
 		}
 
 		@Override
 		public Funcep[] obterFuncep() {
-			return FuncepEstados.carregarDadosEX();
+			return FuncepEstados.carregarDadosIM();
 		}
 	},
 
@@ -216,7 +216,7 @@ public enum Uf {
 	PI {
 		@Override
 		public Aliquota obterAliquota() {
-			return new Aliquota17Padrao12();
+			return new Aliquota18Padrao12();
 		}
 
 		@Override
@@ -240,7 +240,7 @@ public enum Uf {
 	RJ {
 		@Override
 		public Aliquota obterAliquota() {
-			return new Aliquota19Padrao7();
+			return new AliquotaRioDeJaneiro();
 		}
 
 		@Override
@@ -264,7 +264,7 @@ public enum Uf {
 	RO {
 		@Override
 		public Aliquota obterAliquota() {
-			return new Aliquota17Padrao12();
+			return new AliquotaRondonia();
 		}
 
 		@Override
@@ -300,7 +300,7 @@ public enum Uf {
 	SC {
 		@Override
 		public Aliquota obterAliquota() {
-			return new Aliquota17Padrao7();
+			return new AliquotaSantaCatarina();
 		}
 
 		@Override

@@ -9,7 +9,7 @@ public class Aliquota18Padrao12 implements Aliquota {
 	public double getPorcentagem(Uf origem, Uf destino) {
 		if (origem.equals(destino)) {
 			return 18;
-		} else if (destino.equals(Uf.EX)) {
+		} else if (destino.equals(Uf.IM)) {
 			return 4;
 		}
 		return 12;
