@@ -80,7 +80,7 @@ public class FuncepEstados {
 		return array;
 	}
 
-	public static Funcep[] carregarDadosEX() {
+	public static Funcep[] carregarDadosIM() {
 		Funcep[] array = new Funcep[2];
 		array[0] = new Funcep(0.01);
 		array[1] = new Funcep(0);
