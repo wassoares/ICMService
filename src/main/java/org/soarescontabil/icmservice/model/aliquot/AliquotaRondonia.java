@@ -8,7 +8,7 @@ public class AliquotaRondonia implements Aliquota {
 	@Override
 	public double getPorcentagem(Uf origem, Uf destino) {
 		if (origem.equals(destino)) {
-			return 17,5;
+			return 17.5;
 		} else if (destino.equals(Uf.IM)) {
 			return 4;
 		}

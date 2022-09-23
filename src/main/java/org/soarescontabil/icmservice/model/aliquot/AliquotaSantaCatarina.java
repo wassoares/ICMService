@@ -3,7 +3,7 @@ package org.soarescontabil.icmservice.model.aliquot;
 import org.soarescontabil.icmservice.model.Aliquota;
 import org.soarescontabil.icmservice.model.Uf;
 
-public class Aliquota17Padrao7 implements Aliquota {
+public class AliquotaSantaCatarina implements Aliquota {
 	
 	@Override
 	public double getPorcentagem(Uf origem, Uf destino) {
