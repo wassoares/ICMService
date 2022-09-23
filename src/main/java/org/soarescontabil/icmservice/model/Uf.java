@@ -1,11 +1,12 @@
 package org.soarescontabil.icmservice.model;
 
 import org.soarescontabil.icmservice.model.aliquot.Aliquota17Padrao12;
-import org.soarescontabil.icmservice.model.aliquot.Aliquota17Padrao7;
 import org.soarescontabil.icmservice.model.aliquot.Aliquota18Padrao12;
 import org.soarescontabil.icmservice.model.aliquot.Aliquota18Padrao7;
-import org.soarescontabil.icmservice.model.aliquot.Aliquota19Padrao7;
-import org.soarescontabil.icmservice.model.aliquot.AliquotaExterior;
+import org.soarescontabil.icmservice.model.aliquot.AliquotaImportacao;
+import org.soarescontabil.icmservice.model.aliquot.AliquotaRioDeJaneiro;
+import org.soarescontabil.icmservice.model.aliquot.AliquotaRondonia;
+import org.soarescontabil.icmservice.model.aliquot.AliquotaSantaCatarina;
 
 public enum Uf {
 
