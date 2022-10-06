@@ -3,7 +3,7 @@ package org.soarescontabil.service.controller;
 import java.util.Collection;
 
 import org.soarescontabil.service.model.Usuario;
-import org.soarescontabil.service.service.UsuarioService;
+import org.soarescontabil.service.services.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;

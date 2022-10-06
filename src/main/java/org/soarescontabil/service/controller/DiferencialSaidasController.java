@@ -1,7 +1,7 @@
 package org.soarescontabil.service.controller;
 
 import org.soarescontabil.service.model.DiferencialSaidas;
-import org.soarescontabil.service.service.DiferencialSaidasService;
+import org.soarescontabil.service.services.DiferencialSaidasService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;

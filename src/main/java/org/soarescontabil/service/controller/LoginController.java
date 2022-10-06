@@ -5,7 +5,7 @@ import java.util.Date;
 import javax.servlet.ServletException;
 
 import org.soarescontabil.service.model.Usuario;
-import org.soarescontabil.service.service.UsuarioService;
+import org.soarescontabil.service.services.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.RequestBody;

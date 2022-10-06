@@ -1,4 +1,4 @@
-package org.soarescontabil.service.service;
+package org.soarescontabil.service.services;
 
 import org.soarescontabil.service.model.AntecipacaoEntradas;
 import org.springframework.stereotype.Service;

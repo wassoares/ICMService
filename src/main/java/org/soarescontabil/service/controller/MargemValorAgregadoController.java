@@ -3,7 +3,7 @@ package org.soarescontabil.service.controller;
 import java.util.Collection;
 
 import org.soarescontabil.service.model.MargemValorAgregado;
-import org.soarescontabil.service.service.MargemValorAgregadoService;
+import org.soarescontabil.service.services.MargemValorAgregadoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;

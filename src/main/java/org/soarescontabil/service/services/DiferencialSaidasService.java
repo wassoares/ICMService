@@ -1,4 +1,4 @@
-package org.soarescontabil.service.service;
+package org.soarescontabil.service.services;
 
 import org.soarescontabil.service.model.DiferencialSaidas;
 import org.springframework.stereotype.Service;
